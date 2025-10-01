@@ -6,7 +6,6 @@ public class Professor extends Usuario {
 //	construtor do usuário
 	public Professor(int id, String nome, String email) {
 		super(id, nome, email);
-		// TODO Auto-generated constructor stub
 	}
 
 // 	ultilizando o método abstrato
