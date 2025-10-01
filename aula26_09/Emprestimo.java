@@ -29,8 +29,8 @@ public class Emprestimo {
 		super();
 		this.livro = livro;
 		this.usuario = usuario;
-		this.dataE = dataE;
-		this.dataD = dataD;
+		this.dataE = LocalDate.now();
+		this.dataD = dataE.plusDays(15);
 	}
 
 }
