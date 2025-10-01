@@ -1,5 +1,8 @@
 package aula26_09;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Livro implements Emprestavel {
 //	Criando os atributos
 	private int codigoLivro;
@@ -60,6 +63,36 @@ public class Livro implements Emprestavel {
 			System.out.println("Esse livro já está disponível!");
 		}
 
+	}
+
+	public static Livro cadastrarLivro(Scanner sc) {
+		System.out.print("insira o codigo do livro: ");
+		int codigoLivro = sc.nextInt();
+		sc.nextLine();
+		System.out.print("\ninsira o título do livro: ");
+		String tituloLivro = sc.nextLine();
+		System.out.print("\ninsira o autor do livro: ");
+		String autorLivro = sc.nextLine();
+		return new Livro(codigoLivro, tituloLivro, autorLivro, Status.DISPONIVEL);
+	}
+
+	public static void removerLivro(Scanner sc, ArrayList<Livro> livros) {
+		System.out.println("insira o código do livro que deseja remover");
+		int codigoLivro = sc.nextInt();
+		sc.nextLine();
+
+		boolean removido = false;
+		for (Livro l : livros) {
+			if (l.getCodigoLivro() == codigoLivro) {
+				livros.remove(l);
+				System.out.println("Livro removido com sucesso");
+				removido = true;
+				break;
+			}
+		}
+		if (!removido) {
+			System.out.println("O livro não encontrado.");
+		}
 	}
 
 //	Criando o construtor
