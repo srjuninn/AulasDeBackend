@@ -1,18 +1,19 @@
 package aula26_09;
 
-//	usando a herança da classe usuário no aluno
+//	Classe Aluno herda de Usuario
 public class Aluno extends Usuario {
+
+	// Atributo específico
 	private int limiteEmprestimos = 2;
 
-//	ultilizando o construtor do usuario pra qundo for criar o aluno	
+	// Construtor
 	public Aluno(int id, String nome, String email) {
 		super(id, nome, email);
 	}
 
-	// adicionando um uma lógica no metódo abstrato
+	// Implementação do método abstrato
 	@Override
-	public void getLimiteEmprestimos() {
-		System.out.println("Você tem um limite de " + this.limiteEmprestimos + " emprestimos");
+	public int getLimiteEmprestimos() {
+		return limiteEmprestimos;
 	}
-
 }
