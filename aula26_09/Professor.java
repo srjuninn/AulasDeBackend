@@ -10,7 +10,7 @@ public class Professor extends Usuario {
 
 // 	ultilizando o método abstrato
 	@Override
-	public void getLimiteEmprestimos() {
-		System.out.println("Você tem um limite de " + this.limiteEmprestimos + " emprestimos");
+	public int getLimiteEmprestimos() {
+		return limiteEmprestimos;
 	}
 }
