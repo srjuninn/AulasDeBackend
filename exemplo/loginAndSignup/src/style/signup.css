@@ -1,0 +1,338 @@
+@import url(./global.css);
+
+body {
+    display: flex;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* //////////////////// Signup Phrase //////////////////// */
+.signupPhrase {
+    width: 625px;
+    position: absolute;
+    top: 50px;
+    left: 125px;
+    padding: 33px 0 0 28px;
+}
+
+.signupPhrase > img {
+    width: 123px;
+    height: 86px;
+    position: relative;
+    top: 50px;
+    left: -20px;
+}
+
+.signupPhrase > h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #3A424A;
+}
+
+.signupPhrase > h1 > span {
+    font-weight: 600;
+    color: #3062D4;
+}
+
+.signupPhrase > .steveJobs > p {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* ////////////////// Main Layout ////////////////// */
+aside {
+    height: 100vh;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 0;
+    right: 0; /* Posiciona o form à direita */
+    width: 50vw; /* Ajusta a largura do formulário */
+    z-index: 1;
+}
+
+aside > main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0 128px;
+    gap: 40px;
+}
+
+main > h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #171725;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 403px;
+    gap: 16px;
+    padding: 0 20px 20px 0;
+}
+
+.inputGroup {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 380px;
+    padding: 12px 20px;
+    gap: 16px;
+    border: 1px solid #E0E2E9;
+    border-radius: 8px;
+}
+
+.inputGroup > img {
+    width: 25px;
+    height: 21px;
+}
+
+.inputGroup > input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    color: #6c6d71;
+}
+
+.forgot {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+form > .forgot > a {
+    font-size: 15px;
+    color: #0062FF;
+    font-weight: 500;
+}
+
+/* //////////// Button signUp ////////////////// */
+#signUp {
+    width: 100%;
+    padding: 12px;
+    background-color: #0062FF;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#signUp > p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+/* //////////////// OR /////////////////////////// */
+.or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.or > .line {
+    height: 1px;
+    width: 173px;
+    border: 0.5px solid #E4E6EC;
+}
+
+.or > p {
+    font-size: 14px;
+    color: #969AB8;
+}
+
+/* ////////////////// Google and Facebook buttons ///////////////////////////// */
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.loginWrapper > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 50px;
+    gap: 4px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E2E9;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.loginWrapper > button > p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.loginWrapper > button > img {
+    width: 27px;
+    height: 27px;
+}
+
+/* ////////////// Have an account ? ///////////////////////// */
+.hasAnAccount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #969AB8;
+}
+
+.hasAnAccount > a {
+    font-weight: 500;
+    color: #0062FF;
+    text-decoration: none;
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .signupPhrase {
+        left: 50px;
+        width: 500px;
+    }
+
+    aside > main {
+        padding: 0 64px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .inputGroup {
+        width: 100%;
+    }
+
+    .or > .line {
+        width: 120px;
+    }
+
+    .loginWrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .loginWrapper > button {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 10px 20px;
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body > img,
+    .signupPhrase {
+        display: none;
+    }
+
+    aside {
+        position: relative;
+        width: 100vw;
+        height: auto;
+    }
+
+    aside > main {
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    form {
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+
+    .inputGroup {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .or > .line {
+        width: 100px;
+    }
+
+    .loginWrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .loginWrapper > button {
+        width: 100%;
+        max-width: 400px;
+        justify-content: center;
+    }
+
+    #signUp {
+        max-width: 400px;
+    }
+
+    .forgot,
+    .hasAnAccount {
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    main > h2 {
+        font-size: 24px;
+    }
+
+    .or > .line {
+        width: 70px;
+    }
+
+    .inputGroup > img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .loginWrapper > button > img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .loginWrapper > button > p {
+        font-size: 13px;
+    }
+
+    .hasAnAccount {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+}
