@@ -10,6 +10,7 @@ import com.login.signup.dto.UsuarioRequestDTO;
 import com.login.signup.dto.UsuarioResponseDTO;
 import com.login.signup.entity.Usuario;
 import com.login.signup.repository.UsuarioRepository;
+
 @Service
 public class UsuarioService {
 
@@ -28,17 +29,9 @@ public class UsuarioService {
 	}
 
 // Serviço de login de usuario
-	public String login(UsuarioRequestDTO userDTO) {
-		Usuario findUser = usuarioRepository.findByEmail(userDTO.getEmail());
+	public Usuario findByEmail(String email) {
 
-		if (findUser == null) {
-			return ("Usuário não encontrado");
-		} else {
-			if (findUser.getPassword().equals(userDTO.getPassword())) {
-				return ("Logado com sucesso!");
-			}
-			return ("Essa senha pertence ao usuário com o email " + findUser.getEmail());
-		}
+		return usuarioRepository.findByEmail(email);
 
 	}
 
